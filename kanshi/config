@@ -1,0 +1,14 @@
+#################
+# Kanshi config #
+#################
+
+# Simple config to fix problems with clamshell mode
+profile home_1440 {
+	output "Goldstar Company Ltd  0x00004262" mode 1440x900 position 0,0
+	output eDP-1 mode 1920x1080 position 1440,0
+}
+
+profile home_1920 {
+	output HDMI-A-1 mode 1920x1080 position 0,0
+	output eDP-1 mode 1920x1080 position 1920,0
+}
