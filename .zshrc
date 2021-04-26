@@ -37,7 +37,7 @@ command_not_found_handler() {
 } 
 
 # Prompt style
-if [ $EUID -e 0 ]; then
+if [ $EUID -eq 0 ]; then
 	PS_USERNAME="%F{green}%n%f"
 	PS_CHAR="%F{white}$%f"
 else
@@ -48,7 +48,7 @@ fi
 PROMPT="%B$PS_USERNAME@%F{yellow}%m%f %F{gray}%~%f $PS_CHAR%b "
 
 # Aliases
-if [[ $EUID != 0 ]]; then
+if [ $EUID -ne 0 ]; then
 	# A little fix for my amnesia
 	alias pacman="sudo pacman"
 fi
