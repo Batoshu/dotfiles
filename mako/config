@@ -1,0 +1,36 @@
+###############
+# Mako config #
+###############
+
+# Limit visible notifications to 4
+max-visible=4
+
+# Sort by time (Oldest at top)
+sort=+time
+
+# Display even in fullscreen applications
+layer=overlay
+
+# Show notifications in top right corner
+anchor=top-right
+
+# Set font
+font=serif 11
+
+# Colors, margins and borders
+background-color=#1a1b26cc
+text-color=#ffffffff
+width=300
+height=250
+margin=10
+padding=5
+border-size=2
+border-color=#32344acc
+border-radius=4
+
+# Change default timeout
+default-timeout=10000
+
+# Ignore notification timeout
+ignore-timeout=1
+
