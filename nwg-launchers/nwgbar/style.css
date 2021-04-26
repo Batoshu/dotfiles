@@ -1,0 +1,31 @@
+#bar {
+	margin: 30px /* affects top/bottom & left/right alignment */
+}
+
+button, image {
+	background: none;
+	border-style: none;
+	box-shadow: none;
+	color: #999
+}
+
+button {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 5px
+}
+
+button:hover {
+	background-color: rgba (255, 255, 255, 0.1)
+}
+
+button:focus {
+	box-shadow: none;
+	border: none;
+	outline: none;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+grid {
+	/* e.g. for common background to all buttons */
+}

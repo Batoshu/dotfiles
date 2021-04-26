@@ -1,0 +1,27 @@
+[
+	{
+		"name": "Lock",
+		"exec": "loginctl lock-session",
+		"icon": "system-lock-screen"
+	},
+	{
+		"name": "Logout",
+		"exec": "swaymsg exit",
+		"icon": "system-log-out"
+	},
+	{
+		"name": "Suspend",
+		"exec": "loginctl suspend -i",
+		"icon": "system-suspend"
+	},
+	{
+		"name": "Reboot",
+		"exec": "loginctl reboot -i",
+		"icon": "system-reboot"
+	},
+	{
+		"name": "Shutdown",
+		"exec": "loginctl poweroff -i",
+		"icon": "system-shutdown"
+	}
+]
