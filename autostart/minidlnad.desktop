@@ -1,0 +1,4 @@
+[Desktop Entry]
+Exec=/usr/bin/minidlnad -f /home/batoshu/.config/minidlna/minidlna.conf
+Name=minidlnad
+Type=Application
