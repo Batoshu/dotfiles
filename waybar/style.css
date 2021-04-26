@@ -1,0 +1,32 @@
+/*
+ * Waybar styles
+ */
+
+window {
+        font-family: Terminus, "Font Awesome 5 Free";
+	font-size: 12px;
+        background: rgba(26, 27, 38, 0.8);
+        color: #c5c8de;
+}
+
+#workspaces button {
+	min-width: 20px;
+	border: none;
+	background: none;
+	text-shadow: none;
+}
+
+#mode, #temperature, #disk, #memory, #cpu,
+#window,
+#tray, #network, #backlight, #pulseaudio, #battery, #clock {
+	padding: 0 10px;
+	margin: 0 5px;
+}
+
+tooltip {
+	font-family: Terminus;
+	border: none;
+	border-radius: 4px;
+	background: rgba(26, 27, 38, 0.9);
+	color: #c5c8de;
+}

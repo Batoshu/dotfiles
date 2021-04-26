@@ -1,0 +1,136 @@
+[{
+	"output": ["eDP-1"],
+	"layer": "top",
+	"height": 32,
+	"modules-left": ["sway/workspaces", "sway/mode", "temperature", "disk", "memory", "cpu"],
+	"modules-center": ["sway/window"],
+	"modules-right": ["tray", "network", "backlight", "pulseaudio", "battery", "clock"],	
+	"sway/workspaces": {
+		"all-outputs": true,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"default": ""
+		},
+		"disable-scroll": true,
+		"disable-click": false,
+		"current-only": true
+	},
+	"sway/mode": {
+		"tooltip": false
+	},
+	"cpu": {
+		"interval": 1,
+		"format": " {usage}%",
+		"format-alt": " {avg_frequency}GHz"
+	},
+	"memory": {
+		"interval": 1,
+		"format": " {percentage}%",
+		"format-alt": " {used:0.1f}GiB / {total:1.0f}GiB",
+		"tooltip": true,
+		"tooltip-format": "{used:0.01f}G / {total:1.0f}G"
+	},
+	"disk": {
+		"interval": 5,
+		"format": " {percentage_used}%",
+		"format-alt": " {used} / {total}",
+		"tooltip": true,
+		"tooltip-format": "root partition\n{used} / {total}\nFree space: {free} ({percentage_free}% left)"
+	},
+	"temperature": {
+		"interval": 1,
+		"format": "{icon} {temperatureC}°C",
+		"critical-threshold": "95",
+		"format-icons": ["", "", "", "", ""],
+		"tooltip": false
+	},
+	"sway/window": {
+		"max-length": 75,
+		"tooltip": true
+	},
+	"tray": {
+		"icon-size": 16,
+		"spacing": 10
+	},
+	"network": {
+		"interface": "wlan0",
+		"interval": 1,
+		"format-ethernet": " connected",
+		"format-wifi": " {essid}",
+		"format-linked": " <i>linked</i>",
+		"format-disconnected": " disconnected",
+		"tooltip": true,
+		"tooltip-format-ethernet": "{ifname}\nConnected\nIP: {ipaddr}\nDownload: {bandwidthDownBits}\nUpload: {bandwidthUpBits}",
+		"tooltip-format-wifi": "{ifname}\nConnected to {essid}\nIP: {ipaddr}\nSignal: {signaldBm}\nDownload: {bandwidthDownBits}\nUpload: {bandwidthUpBits}"
+	},
+	"backlight": {
+		"interval": 1,
+		"format": " {percent}%",
+		"on-scroll-up": "light -A 2",
+		"on-scroll-down": "light -U 2"
+	},
+	"pulseaudio": {
+		"format": " {volume}%",
+		"format-bluetooth": " {volume}%",
+		"format-muted": " {volume}%",
+		"scroll-step": 2,
+		"tooltip": true,
+		"tooltip-format": "{desc}"
+	},
+	"battery": {
+		"interval": 1,
+		"format": "{icon} {capacity}%",
+		"format-alt": "{icon} {capacity}% ({power:0.1f}W)",
+		"format-icons": ["", "", "", "", ""],
+		"tooltop": true,
+		"tooltip-format": "{timeTo}"
+	},
+	"clock": {
+		"interval": 1,
+		"format": " {:%H:%M}",
+		"format-alt": " {:%H:%M:%S}",
+		"tooltip": true,
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
+	}
+},
+{
+	"output": ["HDMI-A-1"],
+	"layer": "top",
+	"height": 30,
+	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-center": ["sway/window"],
+	"modules-right": ["clock"],
+	"sway/workspaces": {
+		"all-outputs": true,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"default": ""
+		},
+		"disable-scroll": true,
+		"disable-click": false,
+		"current-only": true
+	},
+	"sway/mode": {
+		"tooltip": false
+	},
+	"sway/window": {
+		"max-length": 75,
+		"tooltip": true
+	},
+	"clock": {
+		"interval": 1,
+		"format": " {:%H:%M}",
+		"format-alt": " {:%H:%M:%S}",
+		"tooltip": true,
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
+	}
+}]
+// vi: ft=json
