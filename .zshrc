@@ -74,7 +74,7 @@ export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
 
 # Autostart sway at login
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] && [ $EUID -ne 0]; then
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] && [ $EUID -ne 0 ]; then
 	export _JAVA_AWT_WM_NONREPARENTING=1
 	export QT_QPA_PLATFORM=wayland-egl
 	export ECORE_EVAS_ENGINE=wayland_egl
