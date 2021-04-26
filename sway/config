@@ -1,0 +1,243 @@
+######################
+# Sway configuration #
+######################
+
+###
+# Devices
+###
+
+# Keyboard
+input type:keyboard {
+	xkb_layout pl
+}
+
+# Touchpad
+input type:touchpad {
+	tap enabled
+	natural_scroll enabled
+}
+
+###
+# Outputs
+###
+
+# Set variables
+set $laptop eDP-1
+set $external HDMI-A-1
+
+# Clamshell mode
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+###
+# Settings
+###
+
+# Locker
+set $lockerTimeout 480
+set $locker 'swaylock'
+
+# Wallpaper
+output "*" bg ~/Pictures/wallpaper.png fill
+
+# Mod key
+set $m Mod4
+
+# 2nd mod key
+set $m2 Mod4+Shift
+
+# Floating modifier (allows to move floating windows with mouse)
+floating_modifier $m normal
+
+# Launchers
+set $launcher nwggrid -b 1A1B26EE
+set $sessionLauncher nwgbar -b 1A1B26EE
+
+# Workspaces
+set $w1 workspace number 1
+set $w2 workspace number 2
+set $w3 workspace number 3
+set $w4 workspace number 4
+set $w5 workspace number 5
+set $w6 workspace number 6
+set $w7 workspace number 7
+set $w8 workspace number 8
+set $w9 workspace number 9
+set $w0 workspace number 10
+
+# Locker
+set $locker 'swaylock'
+
+###
+# Styling
+###
+
+# Borders
+default_border pixel 3
+default_floating_border	pixel 2
+
+# Borders colors
+client.focused          #27293d #1a1b26 #787c99 #27293d #27293d
+client.focused_inactive #27293d #1a1b26 #787c99 #27293d #27293d
+client.unfocused        #1a1b26 #1a1b26 #787c99 #1a1b26 #1a1b26
+client.urgent           #f7768e #1a1b26 #787c99 #f7768e #f7768e
+client.placeholder      #27293d #1a1b26 #787c99 #27293d #27293d
+
+client.background       #1a1b26
+
+# Gaps
+smart_gaps 0
+gaps inner 8
+gaps outer 0
+
+###
+# Key bindings
+###
+
+# Resize mode bindings
+mode "resize" {
+	bindsym {
+		# Change size by 50 pixels
+		Left resize shrink width 50px
+		Down resize grow height 50px
+		Up resize shrink height 50px
+		Right resize grow width 50px
+
+		# Change size by 5 pixels
+		Shift+Left resize shrink width 50px
+		Shift+Down resize grow height 50px
+		Shift+Up resize shrink height 50px
+		Shift+Right resize grow width 50px
+
+		# Fixed sizes
+		# Centered (0.8x FHD for floating mode
+		c resize set 1536 864
+
+		# For mini player (0.25x FHD for floating mode)
+		p resize set 476 260 
+
+		# Return to default mode
+		Return mode "default"
+		$m+r mode "default"
+	}
+}
+
+# Default bindings
+bindsym {
+	# Reload sway configuration
+	$m2+r reload
+
+	# Application launcher
+	$m+Return exec $launcher
+
+	# Session launcher
+	$m+Escape exec $sessionLauncher
+	
+	# Switch to resize mode
+	$m+r mode "resize"
+
+	# Kill focused window
+	$m2+q kill	
+
+	# Switch fullscreen
+	$m+f fullscreen
+
+	# Toggle current window between tiling and floating mode
+	$m2+space floating toggle
+
+	# Swap focus between tiling windows and floating windows
+	$m+space focus mode_toggle
+
+	# Toggle sticky mode for window
+	$m+s sticky toggle
+
+	# Change split for new windows
+	$m+h splith
+	$m+v splitv
+
+	# Move windows between woskapces and scratchpad
+	$m+minus move scratchpad
+	$m+equal scratchpad show
+
+	# Switch to another workspace
+	$m+1 $w1
+	$m+2 $w2
+	$m+3 $w3
+	$m+4 $w4
+	$m+5 $w5
+	$m+6 $w6
+	$m+7 $w7
+	$m+8 $w8
+	$m+9 $w9
+	$m+0 $w0
+
+	# Move focused window to another workspace
+	$m2+1 move container to $w1
+	$m2+2 move container to $w2
+	$m2+3 move container to $w3
+	$m2+4 move container to $w4
+	$m2+5 move container to $w5
+	$m2+6 move container to $w6
+	$m2+7 move container to $w7
+	$m2+8 move container to $w8
+	$m2+9 move container to $w9
+	$m2+0 move container to $w0
+
+	# Change focus
+	$m+Left focus left
+	$m+Down focus down
+	$m+Up focus up
+	$m+Right focus right
+
+	# Move window
+	$m2+Left move left
+	$m2+Down move down
+	$m2+Up move up
+	$m2+Right move right
+
+	# Volume control
+	XF86AudioRaiseVolume	exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+	XF86AudioLowerVolume	exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+	XF86AudioMute		exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+	# Brightness control
+	XF86MonBrightnessUp	exec light -A 5
+	XF86MonBrightnessDown	exec light -U 5
+
+	# Screenshot
+	# all outputs
+	--release $m+a+Print	exec grim - | wl-copy
+	# selective
+	--release $m+Print	exec grim -g "$(slurp -d -b \#00000070 -c \#ffffffee)" - | wl-copy
+	# focused output
+	--release Print		exec grim -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" - | wl-copy
+}
+
+###
+# Configure specific windows
+###
+for_window [app_id="mpv"] floating enable, \
+	sticky enable, \
+	resize set width 476 270, \
+	move position 1428 0, \
+	border pixel 0
+
+###
+# Waybar
+###
+bar {
+	swaybar_command waybar
+}
+
+###
+# Locker
+###
+exec swayidle -w \
+	timeout $lockerTimeout $locker \
+	before-sleep $locker \
+	lock $locker
+
+###
+# Autorun (Delayed for 1.5s to start tray)
+###
+exec 'sleep 1.5; dex -a'
