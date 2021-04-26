@@ -1,0 +1,80 @@
+###################
+# Swaylock config #
+###################
+# Note: This config is for swaylock-effects
+
+# Daemonize
+daemonize
+
+# Font
+font=DejaVu
+
+# Don't submit empty passwords
+ignore-empty-password
+
+# Don't require password for first 10s
+grace=10
+grace-no-mouse
+
+# Enable clock inside indicator
+clock
+timestr=%H:%M
+datestr=%d/%m/%Y
+
+# Use screenshot instead of static color or image from disk
+screenshots
+
+# Background image effects
+fade-in=0.2
+effect-blur=8x3
+effect-scale=0.5
+effect-vignette=0.6:1
+
+# Indicator configs
+indicator
+indicator-radius=130
+indicator-thickness=10
+indicator-caps-lock
+
+###
+# Color configs
+###
+
+# Highlight colors
+key-hl-color=32344aff
+caps-lock-key-hl-color=32344aff
+
+# Backspace highlight colors
+bs-hl-color=449dabff
+caps-lock-bs-hl-color=449dabff
+
+# Separator color
+separator-color=00000000
+
+# Indicator inside colors
+inside-color=1a1b26cc
+inside-clear-color=1a1b26cc
+inside-caps-lock-color=1a1b26cc
+inside-ver-color=1a1b26cc
+inside-wrong-color=ff7a9355
+
+# Indicator ring colors
+ring-color=27293dcc
+ring-clear-color=787c99cc
+ring-caps-lock-color=27293dcc
+ring-ver-color=ff9e64cc
+ring-wrong-color=ff7a93cc
+
+# Line colors
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+# Font colors
+text-color=ff9e64ff
+text-clear-color=ff9e6400
+text-caps-lock-color=ff9e6400
+text-ver-color=ff9e6400
+text-wrong-color=ff7a9300
