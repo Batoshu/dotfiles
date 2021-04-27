@@ -19,6 +19,7 @@ elif [ $# -eq 2 ]; then
 else
 	echo "Invalid arguments."
 	echo "Usage: $0 <repo> [target_home]"
+	exit 1
 fi
 
 echo "Source directory: $SOURCE"
@@ -32,6 +33,8 @@ echov "Removing $TARGET/.zshrc"
 rm -rf $TARGET/.zshrc
 echov "Removing $TARGET/.local/share/applications/"
 rm -rf $TARGET/.local/share/applications
+echov "Removing $TARGET/.config/libinput-gestures.conf"
+rm -rf $TARGET/.config/libinput-gestures.conf
 
 for D in $CONFIGS
 do
@@ -46,6 +49,8 @@ echov "Creating symlink $TARGET/.local/share/applications/"
 mkdir -p $TARGET/.local/share
 ln -sf $SOURCE/applications $TARGET/.local/share/applications
 mkdir -p $TARGET/.config
+echov "Creating symlink $TARGET/.config/libinput-gestures.conf"
+ln -sf $SOURCE/libinput-gestures.conf $TARGET/.config/libinput-gestures.conf
 
 for D in $CONFIGS
 do
