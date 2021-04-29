@@ -1,4 +1,3 @@
-	echo $@
 ######################
 # Sway configuration #
 ######################
@@ -38,6 +37,13 @@ bindswitch --reload --locked lid:off output $laptop enable
 set $lockerTimeout 480
 set $locker 'swaylock'
 set $lockerSecure 'swaylock --grace 0'
+set $screenTimeout 510
+# Why this ugly hack instead of 'output * dpms off'?
+# 'output * dpms off' likes to cause kernel panics from time to time on my machine
+# I have no idea why is that happening and I'm too lazy to fix it...
+# and this little hack here works just fine.
+set $screenOff 'swaymsg "output HDMI-A-1 dpms off"; light -O; light -S 0'
+set $screenOn 'swaymsg "output * dpms on"; light -I'
 
 # Wallpaper
 output "*" bg ~/Pictures/wallpaper.png fill
@@ -236,6 +242,8 @@ bar {
 ###
 exec swayidle -w \
 	timeout $lockerTimeout $locker \
+	timeout $screenTimeout $screenOff \
+	resume $screenOn \
 	before-sleep $lockerSecure \
 	lock $lockerSecure
 
