@@ -1,3 +1,4 @@
+	echo $@
 ######################
 # Sway configuration #
 ######################
@@ -36,6 +37,7 @@ bindswitch --reload --locked lid:off output $laptop enable
 # Locker
 set $lockerTimeout 480
 set $locker 'swaylock'
+set $lockerSecure 'swaylock --grace 0'
 
 # Wallpaper
 output "*" bg ~/Pictures/wallpaper.png fill
@@ -234,8 +236,8 @@ bar {
 ###
 exec swayidle -w \
 	timeout $lockerTimeout $locker \
-	before-sleep $locker \
-	lock $locker
+	before-sleep $lockerSecure \
+	lock $lockerSecure
 
 ###
 # Autorun (Delayed for 1.5s to start tray)
