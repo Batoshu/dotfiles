@@ -230,6 +230,8 @@ for_window [app_id="mpv"] floating enable, \
 	move position 1428 0, \
 	border pixel 0
 
+for_window [app_id="imv"] floating enable
+
 ###
 # Waybar
 ###
