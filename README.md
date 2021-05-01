@@ -18,6 +18,7 @@ dex
 polkit
 polkit-gnome
 kanshi
+udiskie
 libinput-gestures # AUR
 
 light

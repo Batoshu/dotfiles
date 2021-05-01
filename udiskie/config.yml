@@ -1,0 +1,12 @@
+##################
+# udiskie config #
+##################
+
+program_options:
+  # Enable tray icon
+  tray: true
+  # Disable automount
+  automount: false
+  # Enable notification
+  notify: true
+
