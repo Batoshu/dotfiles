@@ -26,7 +26,7 @@ echo "Source directory: $SOURCE"
 echo "Target directory: $TARGET"
 
 # ~/.config dirs:
-CONFIGS="alacritty autostart fontconfig gtk-3.0 htop kanshi mako minidlna nwg-launchers sway swaylock waybar"
+CONFIGS="alacritty autostart fontconfig gtk-3.0 htop kanshi mako minidlna neofetch nwg-launchers sway swaylock waybar"
 
 # Remove previous config files
 echov "Removing $TARGET/.zshrc"
