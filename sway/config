@@ -225,10 +225,10 @@ bindsym {
 # Configure specific windows
 ###
 for_window [app_id="mpv"] floating enable, \
-	sticky enable, \
-	resize set width 476 270, \
-	move position 1428 0, \
-	border pixel 0
+	resize set width 952 540
+
+for_window [app_id="ranger"] floating enable, \
+	resize set width 960 540
 
 for_window [app_id="imv"] floating enable
 
