@@ -61,4 +61,4 @@ papirus-icon-theme
 `linux-zen`
 
 # Wallpaper
-[Source](https://www.deviantart.com/bisbiswas/art/Storm-On-The-Way-871209944)
+[This](https://www.pixiv.net/en/artworks/86521170) + [this](https://www.pixiv.net/en/artworks/60194419)
