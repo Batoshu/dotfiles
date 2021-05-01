@@ -3,29 +3,100 @@
  */
 
 window {
-        font-family: Terminus, "Font Awesome 5 Free";
+	font-family: Terminus, "Font Awesome 5 Free";
 	font-size: 12px;
-        background: rgba(26, 27, 38, 0.8);
-        color: #c5c8de;
+	color: #c5c8de;
+}
+
+window.main-top, window.extra-top {
+	background: rgba(26, 27, 38, 0.8);
+	border-bottom: 2px;
+	border-style: solid;
+	border-color: #27293d;
+}
+
+window.main-bottom {
+	background: none;
+}
+
+window.main-bottom .modules-left {
+	background: rgba(26, 27, 38, 0.8);
+	border-radius: 0 10px 0 0;
+	border-top: 2px;
+	border-right:2px;
+	border-style: solid;
+	border-color: #27293d;
+}
+
+window.main-bottom .modules-right {
+	background: rgba(26, 27, 38, 0.8);
+	border-radius: 10px 0 0 0;
+	border-top: 2px;
+	border-left: 2px;
+	border-style: solid;
+	border-color:#27293d;
 }
 
 #workspaces button {
-	min-width: 20px;
+	color: #787c99;
+	padding: 0 10px;
+	margin: 0;
+	min-width: 0;
 	border: none;
+	border-bottom: 2px;
+	border-style: solid;
+	border-color: #27293d;
+	border-radius: 0;
 	background: none;
 	text-shadow: none;
+	transition-duration: 0.25s;
 }
 
-#mode, #temperature, #disk, #memory, #cpu,
-#window,
-#tray, #network, #backlight, #pulseaudio, #battery, #clock {
+#workspaces button:hover {
+	border-color: #787c99;
+}
+
+#workspaces button.visible {
+	color: #c5c8de;
+}
+
+#workspaces button.focused, #workspaces button.focused:hover {
+	color: #c5c8de;
+	border-color: #c5c8de;
+}
+
+#workspaces button.urgent, #workspaces button.urgent:hover {
+	color: #ff7193;
+	border-color: #ff7193;
+}
+
+#mode {
+	border-bottom: 2px;
+	border-style: solid;
+	border-color: #c5c8de;
+}
+
+#window, #mode {
+	padding: 0 5px;
+}
+
+#cpu, #memory, #disk, #temperature, #clock {
+	padding: 0 15px;
+}
+
+#tray {
 	padding: 0 10px;
-	margin: 0 5px;
+}
+
+#network, #backlight, #pulseaudio, #battery {
+	min-width: 50px;
+	padding: 0 10px;
+	margin: 0;
 }
 
 tooltip {
 	font-family: Terminus;
-	border: none;
+	border: 2px solid #27293d;
 	border-radius: 4px;
 	background: rgba(26, 27, 38, 0.9);
 	color: #c5c8de;

@@ -1,26 +1,60 @@
 [{
 	"output": ["eDP-1"],
-	"layer": "top",
+	"layer": "bottom",
+	"position": "top",
 	"height": 32,
-	"modules-left": ["sway/workspaces", "sway/mode", "temperature", "disk", "memory", "cpu"],
-	"modules-center": ["sway/window"],
-	"modules-right": ["tray", "network", "backlight", "pulseaudio", "battery", "clock"],	
+	"modules-left": [
+		"sway/workspaces", 
+		"sway/window", 
+		"sway/mode"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"disk",
+		"temperature"
+	],
+	"name": "main-top",
 	"sway/workspaces": {
 		"all-outputs": true,
 		"format": "{icon}",
 		"format-icons": {
-			"1": "",
-			"2": "",
-			"3": "",
-			"4": "",
-			"default": ""
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十"
 		},
 		"disable-scroll": true,
 		"disable-click": false,
-		"current-only": true
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": []
+		}
 	},
 	"sway/mode": {
 		"tooltip": false
+	},
+	"sway/window": {
+		"max-length": 50,
+		"tooltip": true
+	},
+	"clock": {
+		"interval": 1,
+		"format": "{:%H:%M:%S}",
+		"format-alt": "{:%H:%M %d/%m/%Y}",
+		"tooltip": true,
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
 	},
 	"cpu": {
 		"interval": 1,
@@ -47,11 +81,23 @@
 		"critical-threshold": "95",
 		"format-icons": ["", "", "", "", ""],
 		"tooltip": false
-	},
-	"sway/window": {
-		"max-length": 75,
-		"tooltip": true
-	},
+	}
+},
+{
+	"output": ["eDP-1"],
+	"layer": "bottom",
+	"position": "bottom",
+	"height": 32,
+	"modules-left": [
+		"tray"
+	],
+	"modules-right": [
+		"network",
+		"backlight",
+		"pulseaudio",
+		"battery"
+	],
+	"name": "main-bottom",
 	"tray": {
 		"icon-size": 16,
 		"spacing": 10
@@ -84,39 +130,45 @@
 	"battery": {
 		"interval": 1,
 		"format": "{icon} {capacity}%",
-		"format-alt": "{icon} {capacity}% ({power:0.1f}W)",
+		"format-alt": "{icon} {time} ({power:0.1f}W)",
 		"format-icons": ["", "", "", "", ""],
 		"tooltop": true,
 		"tooltip-format": "{timeTo}"
-	},
-	"clock": {
-		"interval": 1,
-		"format": " {:%H:%M}",
-		"format-alt": " {:%H:%M:%S}",
-		"tooltip": true,
-		"tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
 	}
 },
 {
 	"output": ["HDMI-A-1"],
-	"layer": "top",
-	"height": 30,
+	"layer": "bottom",
+	"position": "top",
+	"height": 32,
 	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": ["sway/window"],
 	"modules-right": ["clock"],
+	"name": "extra-top",
 	"sway/workspaces": {
 		"all-outputs": true,
 		"format": "{icon}",
 		"format-icons": {
-			"1": "",
-			"2": "",
-			"3": "",
-			"4": "",
-			"default": ""
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十"
 		},
 		"disable-scroll": true,
 		"disable-click": false,
-		"current-only": true
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": []
+		}
+
 	},
 	"sway/mode": {
 		"tooltip": false
@@ -128,7 +180,7 @@
 	"clock": {
 		"interval": 1,
 		"format": " {:%H:%M}",
-		"format-alt": " {:%H:%M:%S}",
+		"format-alt": " {:%d/%m/%Y}",
 		"tooltip": true,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
 	}
