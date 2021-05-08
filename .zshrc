@@ -81,6 +81,6 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] && [ $EUID -ne 0 ]; then
 	export ELM_ENGINE=wayland_egl
 	export SDL_VIDEODRIVER=wayland
 	export MOZ_DBUS_REMOTE=1
-
+	export XDG_CURRENT_DESKTOP=sway
 	exec dbus-launch sway > $HOME/.local/log/sway.log
 fi
