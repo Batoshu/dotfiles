@@ -82,11 +82,11 @@ set $locker 'swaylock'
 
 # Borders
 default_border pixel 3
-default_floating_border	pixel 2
+default_floating_border	pixel 3
 
 # Borders colors
 client.focused          #27293d #1a1b26 #787c99 #27293d #27293d
-client.focused_inactive #27293d #1a1b26 #787c99 #27293d #27293d
+client.focused_inactive #1a1b26 #1a1b26 #787c99 #1a1b26 #1a1b26
 client.unfocused        #1a1b26 #1a1b26 #787c99 #1a1b26 #1a1b26
 client.urgent           #f7768e #1a1b26 #787c99 #f7768e #f7768e
 client.placeholder      #27293d #1a1b26 #787c99 #27293d #27293d
@@ -202,6 +202,12 @@ bindsym {
 	$m2+Down move down
 	$m2+Up move up
 	$m2+Right move right
+
+	# Move workspace
+	$m2+Control+Left move workspace to output left
+	$m2+Control+Down move workspace to output down
+	$m2+Control+Up move workspace to output up
+	$m2+Control+Right move workspace to output right
 
 	# Volume control
 	XF86AudioRaiseVolume	exec pactl set-sink-volume @DEFAULT_SINK@ +5%
