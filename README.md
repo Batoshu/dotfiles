@@ -21,6 +21,10 @@ kanshi
 udiskie
 libinput-gestures # AUR
 
+pipewire
+pipewire-pulse
+pipewire-media-session
+
 light
 slurp
 grim
