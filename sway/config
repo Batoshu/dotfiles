@@ -239,13 +239,6 @@ for_window [app_id="ranger"] floating enable, \
 for_window [app_id="imv"] floating enable
 
 ###
-# Waybar
-###
-bar {
-	swaybar_command waybar
-}
-
-###
 # Locker
 ###
 exec swayidle -w \
@@ -256,6 +249,18 @@ exec swayidle -w \
 	lock $lockerSecure
 
 ###
+# Pipewire
+###
+exec pipewire
+
+###
 # Autorun (Delayed for 1.5s to start tray)
 ###
 exec 'sleep 1.5; dex -a'
+
+###
+# Waybar
+###
+bar {
+	swaybar_command waybar
+}
