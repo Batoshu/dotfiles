@@ -64,6 +64,3 @@ papirus-icon-theme
 
 ### Kernel
 `linux-zen`
-
-# Wallpaper
-[This](https://www.pixiv.net/en/artworks/86521170) + [this](https://www.pixiv.net/en/artworks/60194419)

@@ -12,10 +12,10 @@
 		"clock"
 	],
 	"modules-right": [
-		"cpu",
-		"memory",
-		"disk",
-		"temperature"
+		"network",
+		"pulseaudio",
+		"backlight",
+		"battery"
 	],
 	"name": "main-top",
 	"sway/workspaces": {
@@ -56,52 +56,6 @@
 		"tooltip": true,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
 	},
-	"cpu": {
-		"interval": 1,
-		"format": " {usage}%",
-		"format-alt": " {avg_frequency}GHz"
-	},
-	"memory": {
-		"interval": 1,
-		"format": " {percentage}%",
-		"format-alt": " {used:0.1f}GiB / {total:1.0f}GiB",
-		"tooltip": true,
-		"tooltip-format": "{used:0.01f}G / {total:1.0f}G"
-	},
-	"disk": {
-		"interval": 5,
-		"format": " {percentage_used}%",
-		"format-alt": " {used} / {total}",
-		"tooltip": true,
-		"tooltip-format": "root partition\n{used} / {total}\nFree space: {free} ({percentage_free}% left)"
-	},
-	"temperature": {
-		"interval": 1,
-		"format": "{icon} {temperatureC}°C",
-		"critical-threshold": "95",
-		"format-icons": ["", "", "", "", ""],
-		"tooltip": false
-	}
-},
-{
-	"output": ["eDP-1"],
-	"layer": "bottom",
-	"position": "bottom",
-	"height": 32,
-	"modules-left": [
-		"tray"
-	],
-	"modules-right": [
-		"network",
-		"backlight",
-		"pulseaudio",
-		"battery"
-	],
-	"name": "main-bottom",
-	"tray": {
-		"icon-size": 16,
-		"spacing": 10
-	},
 	"network": {
 		"interface": "wlan0",
 		"interval": 1,
@@ -134,6 +88,53 @@
 		"format-icons": ["", "", "", "", ""],
 		"tooltop": true,
 		"tooltip-format": "{timeTo}"
+	}
+
+},
+{
+	"output": ["eDP-1"],
+	"layer": "bottom",
+	"position": "bottom",
+	"height": 32,
+	"modules-left": [
+		"tray"
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"disk",
+		"temperature"
+	],
+	"name": "main-bottom",
+	"tray": {
+		"icon-size": 16,
+		"spacing": 10
+	},
+	"cpu": {
+		"interval": 1,
+		"format": " {usage}%",
+		"format-alt": " {avg_frequency}GHz"
+	},
+	"memory": {
+		"interval": 1,
+		"format": " {percentage}%",
+		"format-alt": " {used:0.1f}GiB / {total:1.0f}GiB",
+		"tooltip": true,
+		"tooltip-format": "{used:0.01f}G / {total:1.0f}G"
+	},
+	"disk": {
+		"interval": 5,
+		"format": " {percentage_used}%",
+		"format-alt": " {used} / {total}",
+		"tooltip": true,
+		"tooltip-format": "root partition\n{used} / {total}\nFree space: {free} ({percentage_free}% left)"
+	},
+	"temperature": {
+		"interval": 1,
+		"format": "{icon} {temperatureC}°C",
+		"critical-threshold": "95",
+		"format-icons": ["", "", "", "", ""],
+		"tooltip": false
 	}
 },
 {

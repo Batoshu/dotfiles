@@ -5,75 +5,41 @@
 window {
 	font-family: Terminus, "Font Awesome 5 Free";
 	font-size: 12px;
-	color: #c5c8de;
-}
-
-window.main-top, window.extra-top {
-	background: rgba(26, 27, 38, 0.8);
-	border-bottom: 2px;
-	border-style: solid;
-	border-color: #27293d;
-}
-
-window.main-bottom {
+	text-shadow: 1px 1px 2px #000;
+	color: #fff;
 	background: none;
-}
-
-window.main-bottom .modules-left {
-	background: rgba(26, 27, 38, 0.8);
-	border-radius: 0 10px 0 0;
-	border-top: 2px;
-	border-right:2px;
-	border-style: solid;
-	border-color: #27293d;
-}
-
-window.main-bottom .modules-right {
-	background: rgba(26, 27, 38, 0.8);
-	border-radius: 10px 0 0 0;
-	border-top: 2px;
-	border-left: 2px;
-	border-style: solid;
-	border-color:#27293d;
+	border: none;
 }
 
 #workspaces button {
-	color: #787c99;
+	color: #666;
 	padding: 0 10px;
 	margin: 0;
 	min-width: 0;
 	border: none;
-	border-bottom: 2px;
-	border-style: solid;
-	border-color: #27293d;
-	border-radius: 0;
 	background: none;
-	text-shadow: none;
 	transition-duration: 0.25s;
 }
 
 #workspaces button:hover {
-	border-color: #787c99;
+	color: #ddd;
 }
 
 #workspaces button.visible {
-	color: #c5c8de;
+	color: #ddd;
 }
 
 #workspaces button.focused, #workspaces button.focused:hover {
-	color: #c5c8de;
-	border-color: #c5c8de;
+	color: #fff;
 }
 
 #workspaces button.urgent, #workspaces button.urgent:hover {
-	color: #ff7193;
-	border-color: #ff7193;
+	color: #faa;
 }
 
 #mode {
-	border-bottom: 2px;
-	border-style: solid;
-	border-color: #c5c8de;
+	border: none;
+	font-style: italic;
 }
 
 #window, #mode {
@@ -81,7 +47,9 @@ window.main-bottom .modules-right {
 }
 
 #cpu, #memory, #disk, #temperature, #clock {
+	min-width: 50px;
 	padding: 0 15px;
+	margin: 0;
 }
 
 #tray {
@@ -89,15 +57,13 @@ window.main-bottom .modules-right {
 }
 
 #network, #backlight, #pulseaudio, #battery {
-	min-width: 50px;
 	padding: 0 10px;
-	margin: 0;
 }
 
 tooltip {
 	font-family: Terminus;
-	border: 2px solid #27293d;
+	border: 2px solid #3b4252;
 	border-radius: 4px;
-	background: rgba(26, 27, 38, 0.9);
-	color: #c5c8de;
+	background: rgba(42, 52, 64, 0.9);
+	color: #d6dee9;
 }
